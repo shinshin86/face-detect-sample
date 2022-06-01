@@ -1,7 +1,11 @@
 # face-detect-sample
 Face detect sample. Using opencv
 
+## Install opencv(cv2)
 
+```sh
+pip install opencv-python
+```
 
 ## Usage
 
