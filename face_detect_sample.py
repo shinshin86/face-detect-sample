@@ -1,19 +1,22 @@
 import cv2
 from os import path
 from datetime import datetime
+import json
 
-# config
-W = 960 
-H = 540
-POSITION_X = 10
-POSITION_Y = 10
-FACE_MIN_W = 50
-FACE_MIN_H = 50
-THRESH_HOLD = 500
-SAVE_FULL_IMAGE_DIR = 'full'
-SAVE_FACE_IMAGE_DIR = 'faces'
-FACE_CASCADE_PATH = 'cascade path here'
 
+# read config
+with open("setting.json") as f:
+  settings = json.load(f)
+  SAVE_FULL_IMAGE_DIR = settings["saveFullImageDir"]
+  SAVE_FACE_IMAGE_DIR = settings["saveFaceImageDir"]
+  FACE_CASCADE_PATH = settings["faceCascadePath"]
+  W = int(settings["w"])
+  H = int(settings["h"])
+  POSITION_X = int(settings["positionX"])
+  POSITION_Y = int(settings["positionY"])
+  FACE_MIN_W = int(settings["faceMinW"])
+  FACE_MIN_H = int(settings["faceMinH"])
+  THRESH_HOLD = int(settings["threshHold"])
 
 def main(video_file=None):
   if video_file is None:
@@ -96,5 +99,6 @@ def get_image(cam):
   return img
 
 
-main() # if not have video file, using Your pc camera
-# main('YOUR_VIDEO_FILE')
+if __name__ == "__main__":
+  main() # if not have video file, using Your pc camera
+  # main(<video file path>)

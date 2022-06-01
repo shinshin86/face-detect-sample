@@ -1,0 +1,12 @@
+{
+    "saveFullImageDir": "full",
+    "saveFaceImageDir": "faces",
+    "faceCascadePath": "<cascade file path>",
+    "w": "960",
+    "h": "540",
+    "positionX": "10",
+    "positionY": "10",
+    "faceMinW": "50",
+    "faceMinH": "50",
+    "threshHold": "500"    
+}
